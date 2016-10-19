@@ -176,7 +176,7 @@ renderSlamDown config (SDS.SlamDownState state) =
         SD.Str s → pure $ HH.text s
         SD.Entity s → pure $ HH.text s
         SD.Space → pure $ HH.text " "
-        SD.SoftBreak → pure $ HH.text "\n"
+        SD.SoftBreak → pure $ HH.br_
         SD.LineBreak → pure $ HH.br_
         SD.Emph is → HH.em_ <$> traverse renderInline (A.fromFoldable is)
         SD.Strong is → HH.strong_ <$> traverse renderInline (A.fromFoldable is)
